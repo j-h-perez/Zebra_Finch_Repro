@@ -12,12 +12,9 @@
 
 | Repository Folder | Description |
 |-------------------|-------------|
-| HPLC              | This folder contains the raw HPLC data for the 3 individuals used in this study. |
-| Orthofinder       | This folder contains the orthogroups and output from Orthofinder |
-| Phylogeny         | This folder contains the phylogeny figure used in the manuscript |
-| qMS               | This folder contains the raw qMS data |
-| RSEM              | This folder contains the RSEM analysis output |
+
 | Sequence          | This folder contains the sequence data not on Genbank |
+| Python            | This folder contains the python code and outputs of bioinformatic analyses |
 | qPCR              | This folder contains the qPCR data used for hypothalmic and pituitary analyses |
 | Morphometric      | This folder contains the morphometric, egg laying and water consumption data |
 | R Scripts         | This folder contains the R script files used for all visualizations and analyses |
