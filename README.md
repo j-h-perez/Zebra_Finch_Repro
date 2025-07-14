@@ -18,5 +18,8 @@
 | qMS               | This folder contains the raw qMS data |
 | RSEM              | This folder contains the RSEM analysis output |
 | Sequence          | This folder contains the sequence data not on Genbank |
+| qPCR              | This folder contains the qPCR data used for hypothalmic and pituitary analyses |
+| Morphometric      | This folder contains the morphometric, egg laying and water consumption data |
+| R Scripts         | This folder contains the R script files used for all visualizations and analyses |
 
 </center>
