@@ -12,7 +12,6 @@
 
 | Repository Folder | Description |
 |-------------------|-------------|
-
 | Sequence          | This folder contains the sequence data not on Genbank |
 | Python            | This folder contains the python code and outputs of bioinformatic analyses |
 | qPCR              | This folder contains the qPCR data used for hypothalmic and pituitary analyses |
