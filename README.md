@@ -2,7 +2,7 @@
 
 [![](https://img.shields.io/badge/License-CC%20BY-blue)](https://creativecommons.org/licenses/by/4.0/)
 
-> This repository contains the data and code for Perez et al. In Review including WORDS, WORDS, WORDS and WORDS.
+> This repository contains the data and code for Perez et al. In Review including bioinformatic scripts, R scripts, and composite qPCR and morphometric data files.
 
 <br>
 
