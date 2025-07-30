@@ -1,0 +1,30 @@
+source /apps/profiles/modules_asax.sh.dyn
+
+module load anaconda/3-2022.05
+
+GENOME=/home/usaocb001/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2/GCF_003957565.2_bTaeGut1.4.pri_genomic.fna
+GENOME_FOLDER=/home/usaocb001/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2
+ANNO=/home/usaocb001/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2/genomic.gtf
+
+#cd /home/usaocb001/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2
+
+###these next 2 lines were run interactively in the Zfinch_genome folder
+
+#hisat2_extract_splice_sites.py $ANNO > Zfinch_17June2024_genome.ss
+
+#hisat2_extract_exons.py $ANNO > Zfinch_17June2024_Genome.exon
+
+#ran his as a single job by itself
+#hisat2-build -p 24 --ss Zfinch_17June2024_genome.ss --exon Zfinch_17June2024_Genome.exon -f $GENOME Zfinch_17June2024_genome_Anno
+
+#Define input and output directories
+input_dir="/home/usaocb001/perezjh_research/Students/Olivia_B/NAME/01_trimmed"
+output_dir="/scratch/usaocb001/NAME/05_HiSat2"
+
+
+cd "$output_dir"
+
+ hisat2 -p 24 -k 10 --dta -x "$GENOME_FOLDER"/Zfinch_17June2024_genome_Anno -1 "$input_dir"/NAME_*_R1_001_val_1.fq.gz -2 "$input_dir"/NAME_*_R2_001_val_2.fq.gz -S "$output_dir"/NAME.sam
+    samtools view -b "$output_dir"/NAME.sam > "$output_dir"/NAME_VG.bam
+    samtools sort "$output_dir"/NAME_VG.bam -o "$output_dir"/NAME_VG_Sorted.bam
+    samtools index "$output_dir"/NAME_VG_Sorted.bam
