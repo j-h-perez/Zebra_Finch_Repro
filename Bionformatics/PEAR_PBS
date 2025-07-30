@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+#  load the module
+source /apps/profiles/modules_asax.sh.dyn
+module load pear/0.9.6
+
+#NAME is used as a place holder for the sample number
+cd ~/perezjh_research/Students/Olivia_B/NAME/01_trimmed
+
+pear -j 16 -f NAME_R1_001_val_1.fq.gz -r NAME_R2_001_val_2.fq.gz -o ~/perezjh_research/Students/Olivia_B/NAME/02_merged/NAME_Merged > NAME_pear.log
