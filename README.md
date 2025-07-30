@@ -12,7 +12,7 @@
 
 | Repository Folder | Description |
 |-------------------|-------------|
-| Sequence          | This folder contains the sequence data not on Genbank |
+| HTSeq_Counts          | This folder contains the count data from HTseq |
 | Bioinformatics            | This folder contains the scripts and code for bioinformatic analyses |
 | qPCR and Morphometric | This folder contains the qPCR for hypothalmic and pituitary analyses and morphometric data used  |
 | R Scripts         | This folder contains the R script files used for all visualizations and analyses |
