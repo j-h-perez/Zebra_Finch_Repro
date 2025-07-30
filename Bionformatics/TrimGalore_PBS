@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+#  load the module
+source /apps/profiles/modules_asax.sh.dyn
+module load trimgalore/0.6.7
+
+#NAME is used as a placeholder for the sample name of the sample being processed. This script was run for each of the 3 samples
+cd ~/perezjh_research/Students/Olivia_B/NAME/00_raw
+
+trim_galore -paired -phred33 -length 75 -q 5 -stringency 1 -e 0.1 -o /home/usaocb001/perezjh_research/Students/Olivia_B/NAME/01_trimmed NAME_*_R1_001.fastq.gz NAME_*_R2_001.fastq.gz > /home/usaocb001/perezjh_research/Students/Olivia_B/NAME/01_trimmed/NAME_trimgalore.log
