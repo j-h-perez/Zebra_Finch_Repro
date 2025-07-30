@@ -1,0 +1,36 @@
+#!/bin/bash
+     #
+     #  load the module
+     source /apps/profiles/modules_asax.sh.dyn
+     module load htseq/2.0.4
+
+
+GENOME=~/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2/GCF_003957565.2_bTaeGut1.4.pri_genomic.fna
+ANNO=~/perezjh_research/Data/References_genomes/Zebra_Finch_17June2024/GCF_003957565.2/genomic.gff
+
+
+# Set the directory path where the BAM files are located
+directory="/scratch/usaocb001/NAME/05_HiSat2"
+directory1="/scratch/usaocb001/NAME/07_HTseq"
+
+cd "$directory"
+
+    # Set the output GTF file name
+    output_csv="$directory1/NAME.csv"
+
+    # Set the output abundance table file name
+    output_abund_table="$directory1/NAME_abund.tab"
+
+    # Count reads within venom gene peaks using HTSeq-count
+python -m HTSeq.scripts.count \
+    --nprocesses=50 \
+    --format=bam \
+    --type=gene \
+    --idattr=Name \
+    --stranded=no \
+    --order=pos \
+    --nonunique=all \
+    -a=10 \
+    --counts_output=$output_csv \
+    NAME_VG_Sorted.bam \
+    $ANNO
